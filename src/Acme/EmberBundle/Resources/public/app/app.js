@@ -1,9 +1,18 @@
-window.App = Ember.Application.create();
+import Ember from 'ember';
+import Resolver from 'ember/resolver';
+import loadInitializers from 'ember/load-initializers';
+import config from './config/environment';
 
-//Get the URL for the api from symonfy and then drop the leading slash
-var apiurl = Routing.generate(
-    'acme_api_apiinfo'
-).substr(1);
-App.ApplicationAdapter = DS.RESTAdapter.extend({
-  namespace: apiurl
+let App;
+
+Ember.MODEL_FACTORY_INJECTIONS = true;
+
+App = Ember.Application.extend({
+  modulePrefix: config.modulePrefix,
+  podModulePrefix: config.podModulePrefix,
+  Resolver
 });
+
+loadInitializers(App, config.modulePrefix);
+
+export default App;

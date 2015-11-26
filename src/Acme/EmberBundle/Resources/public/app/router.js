@@ -1,13 +1,11 @@
-App.Router = Ember.Router.extend({
-    location: 'hash'
+import Ember from 'ember';
+import config from './config/environment';
+
+const Router = Ember.Router.extend({
+  location: config.locationType
 });
 
-App.Router.map(function() {
-    this.route("index", {path: "/"});
-    this.resource('categories', function() {
-        this.resource('category', { path: ':id' });
-    });
-    this.resource('products', function() {
-        this.resource('product', { path: ':id' });
-    });
+Router.map(function() {
 });
+
+export default Router;

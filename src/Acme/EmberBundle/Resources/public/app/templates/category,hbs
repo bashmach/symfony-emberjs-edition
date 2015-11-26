@@ -1,5 +1,0 @@
-<h1>Category: {{id}}</h1>
-
-<p>{{name}}</p>
-
-This is it!
