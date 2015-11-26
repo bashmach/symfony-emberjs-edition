@@ -1,5 +1,17 @@
+.idea
+
 /node_modules
+
 /web/bundles/
+
+# Ember Application
+/web/assets/
+/web/tests/
+/web/index.html
+/web/crossdomain.xml
+/web/robots.txt
+/web/testem.js
+
 /app/bootstrap.php.cache
 /app/cache/*
 /app/config/parameters.yml
@@ -11,4 +23,3 @@
 /vendor/
 /bin/
 /composer.phar
-.bowerrc
