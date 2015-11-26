@@ -4,13 +4,3 @@ assetic:
     filters:
         cssrewrite: ~
         jsmin: ~
-        emberprecompile: ~
-
-sp_bower:
-    install_on_warmup: true
-    assetic:
-        filters:
-            js:
-                - ?jsmin
-    bundles:
-        AcmeEmberBundle: ~
