@@ -1,0 +1,16 @@
+<h1>Product: {{product.id}}</h1>
+
+{{#if isEditing}}
+    <p>{{input type="text" value=product.name}}</p>
+    <p>{{input type="text" value=product.description}}</p>
+    <p>{{input type="text" value=product.price}}</p>
+
+    <button {{action 'doneEditing'}}>Done</button>
+{{else}}
+    <p>{{product.name}}</p>
+    <p>{{product.description}}</p>
+    <p>{{product.price}}</p>
+    <p>{{product.category.name}}</p>
+
+    <button {{action 'edit'}}>Edit</button>
+{{/if}}
