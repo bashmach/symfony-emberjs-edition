@@ -12,6 +12,10 @@
 /web/robots.txt
 /web/testem.js
 
+# Production assets
+/web/js/*
+/web/css/*
+
 /app/bootstrap.php.cache
 /app/cache/*
 /app/config/parameters.yml

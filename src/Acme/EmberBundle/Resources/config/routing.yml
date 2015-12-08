@@ -9,6 +9,6 @@ acme_ember_homepage:
     defaults:
         url: null
         _controller: FrameworkBundle:Template:template
-        template:     'AcmeEmberBundle::layout.html.twig'
+        template:     'AcmeEmberBundle::base.html.twig'
     requirements:
         url: "^(?!api).+"
