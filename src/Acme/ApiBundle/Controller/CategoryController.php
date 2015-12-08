@@ -49,7 +49,7 @@ class CategoryController extends FOSRestController
             );
         }
 
-        $view = $this->view(array('categories' => $category), Codes::HTTP_OK)
+        $view = $this->view(array('category' => $category), Codes::HTTP_OK)
                 ->setTemplate("AcmeApiBundle:Category:getCategory.html.twig")
                 ->setTemplateVar('category')
         ;
@@ -58,11 +58,11 @@ class CategoryController extends FOSRestController
     }
 
     /**
-     * List all categorys
+     * List all categories
      *
      * @ApiDoc(
      *   resource = true,
-     *   description = "Lists all the categorys",
+     *   description = "Lists all the categories",
      *   output = "Acme\ApiBundle\Entity\Category"
      * )
      *
@@ -70,13 +70,13 @@ class CategoryController extends FOSRestController
      */
     public function getCategoriesAction()
     {
-        $categorys = $this->container
+        $categories = $this->container
                 ->get('acme_api.category_handler')
                 ->getAll();
 
-        $view = $this->view(array('categories' => $categorys), Codes::HTTP_OK)
-                ->setTemplate("AcmeApiBundle:Category:getCategorys.html.twig")
-                ->setTemplateVar('categorys')
+        $view = $this->view(array('categories' => $categories), Codes::HTTP_OK)
+                ->setTemplate("AcmeApiBundle:Category:getCategories.html.twig")
+                ->setTemplateVar('categories')
         ;
 
         return $this->handleView($view);
