@@ -1,8 +1,6 @@
 /* jshint node: true */
 
 module.exports = function(environment) {
-  var HOST = 'github-master-ember.app';
-
   var ENV = {
     modulePrefix: 'application',
     environment: environment,
@@ -19,14 +17,14 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
       namespace: 'api/v1',
-      host: "//" + HOST
+      host: "//" + process.env.APP_HOST
     },
 
     contentSecurityPolicy: {
-      'connect-src': "'self' " + HOST,
-      'img-src': "'self' " + HOST,
-      'script-src': "'self' 'unsafe-inline' " + HOST,
-      'style-src': "'self' 'unsafe-inline' " + HOST,
+      'connect-src': "'self' " + process.env.APP_HOST,
+      'img-src': "'self' " + process.env.APP_HOST,
+      'script-src': "'self' 'unsafe-inline' " + process.env.APP_HOST,
+      'style-src': "'self' 'unsafe-inline' " + process.env.APP_HOST,
       'font-src': "'self' data: fonts.gstatic.com"
     }
   };
