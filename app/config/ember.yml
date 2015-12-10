@@ -4,3 +4,12 @@ assetic:
     filters:
         cssrewrite: ~
         jsmin: ~
+
+sp_bower:
+    install_on_warmup: true
+    bundles:
+        AcmeEmberBundle:
+            config_dir: "Resources/public"
+            asset_dir: "bower_components"
+            cache:
+                directory: "bower_components/cache"

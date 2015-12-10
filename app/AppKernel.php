@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
             new Nelmio\CorsBundle\NelmioCorsBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+            new Sp\BowerBundle\SpBowerBundle(),
             new Acme\ApiBundle\AcmeApiBundle(),
             new Acme\EmberBundle\AcmeEmberBundle(),
         );
