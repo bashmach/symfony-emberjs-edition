@@ -13,3 +13,6 @@ sp_bower:
             asset_dir: "bower_components"
             cache:
                 directory: "bower_components/cache"
+
+acme_ember:
+    api_host: "%ember_api_host%"

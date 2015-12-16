@@ -13,8 +13,6 @@ use Symfony\Component\Process\ProcessBuilder;
 
 class NpmInstallCommand extends ContainerAwareCommand
 {
-    protected $bundleName = '@AcmeEmberBundle';
-
     protected function configure()
     {
         $this
@@ -47,7 +45,7 @@ EOT
         $output->writeln(
             sprintf(
                 'Installing npm dependencies for <comment>"%s"</comment> into <comment>"%s"</comment>',
-                $this->bundleName,
+                'AcmeEmberBundle',
                 $path
             )
         );
