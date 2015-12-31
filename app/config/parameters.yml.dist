@@ -20,4 +20,4 @@ parameters:
     use_assetic_controller: true
 
     # EmberJS application config
-    ember_api_host: localhost
+    ember_api_host: localhost:8000

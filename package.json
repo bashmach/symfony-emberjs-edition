@@ -1,12 +1,10 @@
 {
-  "name": "symfony_ember_js",
+  "name": "symfony-ember-edition",
   "private": true,
-  "devDependencies": {
-    "bower": "*",
-    "karma-qunit": "*",
-    "karma-phantomjs-launcher": "*",
-    "karma-ember-preprocessor":  "*",
-    "karma": "*",
-    "karma-sauce-launcher": "*"
+  "engines": {
+    "node": "0.12.2"
+  },
+  "dependencies": {
+    "bower": "^1.7.1"
   }
 }

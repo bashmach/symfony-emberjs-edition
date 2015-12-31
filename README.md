@@ -20,9 +20,7 @@ chapter of the Symfony Documentation.
 1) Installing Dependencies
 ----------------------------------
 
-npm install -g bower
-npm install -g ember-precompile
-
+    npm install
 
 2) Installing the EmberJS Edition
 ----------------------------------
@@ -58,7 +56,26 @@ following command:
 
     php composer.phar install
 
-3) Checking your System Configuration
+Whenever you run this command, a script creates the parameters.yml file with configuration of database connection, stmp server, etc. 
+If you don't use `--no-interaction` flag, it allows you to customize all the values interactively. 
+
+Be careful setting the value of `ember_api_host` parameter, this is a hostname of current application 
+and it will be used by EmberJS application for API requests.
+
+
+3) Run Server
+-------------
+
+Skip this step if you have already configured a full-featured web server such as Nginx or Apache.
+
+Built in Web Server provides an easy ability to run your application for demonstration or for local development.
+
+Run the following command to run web server that serves your application at address `localhost:8000`:
+
+    php app/console server:start
+
+
+4) Checking your System Configuration
 -------------------------------------
 
 Before starting coding, make sure that your local system is properly
@@ -73,11 +90,12 @@ The script returns a status code of `0` if all mandatory requirements are met,
 
 Access the `config.php` script from a browser:
 
-    http://localhost/path-to-project/web/config.php
+    http://localhost:8000/config.php
 
 If you get any warnings or recommendations, fix them before moving on.
 
-4) Browsing the Demo Application
+
+5) Browsing the Demo Application
 --------------------------------
 
 Congratulations! You're now ready to use Symfony.
@@ -92,19 +110,19 @@ Create the database schema and add some sample data:
     php app/console doctrine:schema:create --env=dev
     php app/console doctrine:fixtures:load --env=dev
 
-To see a real-live EmberJS in Symfony page in action, access the following page:
-
-    web/app_dev.php/
-
 To browse your new API documentation visit:
 
-    web/app_dev.php/api/doc/
+    http://localhost:8080/api/doc/
 
 And to see the API in action
 
-    web/app_dev.php/api/v1/products
-    web/app_dev.php/api/v1/products/1.json
-    web/app_dev.php/api/v1/products/1.xml
+    http://localhost:8000/api/v1/products
+    http://localhost:8000/api/v1/products/1.json
+    http://localhost:8000/api/v1/products/1.xml
+
+Access the following page to see a real-live EmberJS in Symfony page in action.
+
+    http://localhost:8000/
 
 
 What's inside?
@@ -151,10 +169,10 @@ It comes pre-configured with the following bundles:
   * **WebProfilerBundle** (in dev/test env) - Adds profiling functionality and
     the web debug toolbar
 
-  * **SensioDistributionBundle** (in dev/test env) - Adds functionality for
+  * **SensioDistributionBundle** - Adds functionality for
     configuring and working with Symfony distributions
 
-  * [**SensioGeneratorBundle**][13] (in dev/test env) - Adds code generation
+  * [**SensioGeneratorBundle**][13] - Adds code generation
     capabilities
 
   * [**FOSRestBundle**][14] - Adds suport for rest API
@@ -165,10 +183,10 @@ It comes pre-configured with the following bundles:
 
   * [**SpBowerBundle**][17] - Downloads bower dependencies
 
-  * **AcmeApiBundle** (in dev/test env) - A demo bundle with example code for building
+  * **AcmeApiBundle** - A demo bundle with example code for building
   an EmberJS friendly API
 
-  * **AcmeEmberBundle** (in dev/test env) - A demo bundle with example code for organizing and
+  * **AcmeEmberBundle** - A demo bundle with example code for organizing and
   EmberJS application
 
 All libraries and bundles included in the Symfony EmberJS Edition are

@@ -11,13 +11,13 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\ProcessBuilder;
 
-class NpmInstallCommand extends ContainerAwareCommand
+class BowerInstallCommand extends ContainerAwareCommand
 {
     protected function configure()
     {
         $this
-            ->setName('ember:npm:install')
-            ->setDescription('Install npm dependencies')
+            ->setName('ember:bower:install')
+            ->setDescription('Install bower dependencies')
             ->addOption(
                 'timeout',
                 null,
@@ -26,9 +26,9 @@ class NpmInstallCommand extends ContainerAwareCommand
                 600
             )
             ->setHelp(<<<EOT
-The <info>ember:npm:install</info> command installs npm dependencies of the EmberJS application.
+The <info>ember:bower:install</info> command installs bower dependencies of the EmberJS application.
 
-  <info>php app/console ember:npm:install [--timeout[="..."]]</info>
+  <info>php app/console ember:bower:install [--timeout[="..."]]</info>
 EOT
             )
         ;
@@ -38,13 +38,13 @@ EOT
     {
         $path = $this->getContainer()->get('kernel')->locateResource('@AcmeEmberBundle/Resources/public');
 
-        $builder = new ProcessBuilder(array('npm', 'install'));
+        $builder = new ProcessBuilder(array('bower', 'install'));
         $builder->setTimeout($input->getOption('timeout'));
         $builder->setWorkingDirectory($path);
 
         $output->writeln(
             sprintf(
-                'Installing npm dependencies for <comment>"%s"</comment> into <comment>"%s"</comment>',
+                'Installing bower dependencies for <comment>"%s"</comment> into <comment>"%s"</comment>',
                 'AcmeEmberBundle',
                 $path
             )
