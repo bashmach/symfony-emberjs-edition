@@ -181,8 +181,6 @@ It comes pre-configured with the following bundles:
 
   * [**FOSJsRoutingBundle**][16] - Exposes routes in JavaScript
 
-  * [**SpBowerBundle**][17] - Downloads bower dependencies
-
   * **AcmeApiBundle** - A demo bundle with example code for building
   an EmberJS friendly API
 
@@ -210,4 +208,3 @@ Enjoy!
 [14]: https://github.com/FriendsOfSymfony/FOSRestBundle
 [15]: https://github.com/nelmio/NelmioApiDocBundle
 [16]: https://github.com/FriendsOfSymfony/FOSJsRoutingBundle
-[17]: https://github.com/Spea/SpBowerBundle

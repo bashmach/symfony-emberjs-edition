@@ -22,6 +22,7 @@ class ScriptHandler extends \Sensio\Bundle\DistributionBundle\Composer\ScriptHan
         }
 
         static::executeCommand($event, $consoleDir, 'ember:npm:install', $options['process-timeout']);
+        static::executeCommand($event, $consoleDir, 'ember:bower:install', $options['process-timeout']);
         static::executeCommand($event, $consoleDir, 'ember:build', $options['process-timeout']);
     }
 
