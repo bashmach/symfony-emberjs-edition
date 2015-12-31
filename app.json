@@ -1,0 +1,18 @@
+{
+  "name": "Symfony EmberJS Edition",
+  "description": "The Symfony EmberJS Edition",
+  "repository": "https://github.com/bashmach/symfony-ember-edition",
+  "logo": "http://symfony.com/logos/symfony_black_03.svg",
+  "keywords": ["symfony"],
+  "env": {
+    "SYMFONY__EMBER__API__HOST": {
+      "value": "symfony-ember-edition.herokuapp.com"
+    },
+    "SYMFONY_ENV": {
+      "value": "prod"
+    }
+  },
+  "scripts": {
+    "postdeploy": "php app/console cache:clear"
+  }
+}

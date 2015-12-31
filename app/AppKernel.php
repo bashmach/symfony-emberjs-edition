@@ -43,4 +43,14 @@ class AppKernel extends Kernel
     {
         $loader->load(__DIR__.'/config/config_'.$this->getEnvironment().'.yml');
     }
+
+    public function getRootDir()
+    {
+        if (getenv('SYMFONY_ENV') == 'prod') {
+            // Workaround to avoid problem with the slug of heroku
+            return '/app/app';
+        }
+
+        return parent::getRootDir();
+    }
 }
