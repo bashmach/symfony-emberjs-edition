@@ -8,7 +8,7 @@ class ScriptHandler extends \Sensio\Bundle\DistributionBundle\Composer\ScriptHan
 
 
     /**
-     * Call the demo command of the Acme Demo Bundle.
+     * Call the commands from the Acme Ember Bundle to install dependencies and build Ember application.
      *
      * @param $event CommandEvent A instance
      */

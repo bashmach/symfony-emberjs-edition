@@ -1,6 +1,6 @@
 <?php
 
-// src/Acme/EmberBundle/Command/GreetCommand.php
+// src/Acme/EmberBundle/Command/BowerInstallCommand.php
 namespace Acme\EmberBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
