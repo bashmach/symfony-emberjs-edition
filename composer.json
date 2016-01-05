@@ -39,10 +39,8 @@
         "post-root-package-install": [
             "SymfonyStandard\\Composer::hookRootPackageInstall"
         ],
-        "pre-install-cmd": [
-            "Acme\\ApiBundle\\Composer\\HerokuEnvironment::populateEnvironment"
-        ],
         "post-install-cmd": [
+            "Acme\\ApiBundle\\Composer\\HerokuHandler::populateEnvironment",
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
@@ -52,6 +50,7 @@
             "Acme\\EmberBundle\\Composer\\ScriptHandler::build"
         ],
         "post-update-cmd": [
+            "Acme\\ApiBundle\\Composer\\HerokuHandler::populateEnvironment",
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
@@ -61,7 +60,7 @@
             "Acme\\EmberBundle\\Composer\\ScriptHandler::build"
         ],
         "compile": [
-            "Acme\\ApiBundle\\Composer\\HerokuEnvironment::updateSchema"
+            "Acme\\ApiBundle\\Composer\\HerokuHandler::updateSchema"
         ]
     },
     "config": {

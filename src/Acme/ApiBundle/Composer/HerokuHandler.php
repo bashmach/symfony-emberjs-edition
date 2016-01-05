@@ -1,16 +1,16 @@
 <?php
 namespace Acme\ApiBundle\Composer;
 
-use Composer\Script\Event;
+use Composer\Script\CommandEvent;
 
-class HerokuEnvironment
+class HerokuHandler extends \Sensio\Bundle\DistributionBundle\Composer\ScriptHandler
 {
     /**
      * Populate Heroku environment
      *
      * @param Event $event Event
      */
-    public static function populateEnvironment(Event $event)
+    public static function populateEnvironment(CommandEvent $event)
     {
         $url = getenv('CLEARDB_DATABASE_URL');
 
@@ -34,7 +34,7 @@ class HerokuEnvironment
      *
      * @param Event $event
      */
-    public static function updateSchema(Event $event)
+    public static function updateSchema(CommandEvent $event)
     {
         $options = self::getOptions($event);
         $consoleDir = self::getConsoleDir($event, 'build');
@@ -44,7 +44,5 @@ class HerokuEnvironment
         }
 
         static::executeCommand($event, $consoleDir, 'doctrine:schema:update --force', $options['process-timeout']);
-        static::executeCommand($event, $consoleDir, 'doctrine:fixtures:load --append', $options['process-timeout']);
-
     }
 }
