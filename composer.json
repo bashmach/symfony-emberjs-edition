@@ -59,6 +59,9 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::removeSymfonyStandardFiles",
             "Acme\\EmberBundle\\Composer\\ScriptHandler::build"
+        ],
+        "compile": [
+            "Acme\\ApiBundle\\Composer\\HerokuEnvironment::updateSchema"
         ]
     },
     "config": {
@@ -71,6 +74,7 @@
         "incenteev-parameters": {
             "file": "app/config/parameters.yml",
             "env-map": {
+                "database_driver": "SYMFONY__DATABASE_DRIVER",
                 "database_name": "SYMFONY__DATABASE_NAME",
                 "database_user": "SYMFONY__DATABASE_USER",
                 "database_host": "SYMFONY__DATABASE_HOST",
